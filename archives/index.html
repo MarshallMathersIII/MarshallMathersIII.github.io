@@ -13,11 +13,11 @@
 
     <title>
         
-          Weibo - 亏普
+          Archives - 亏普
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2017/08/06/Weibo/">
+    <link rel="canonical" href="http://yoursite.com/archives/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -147,106 +147,149 @@
 
 
     <!-- Main Content -->
-    
-<!-- Image to hack wechat -->
-<!-- <img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
-
-<!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        background-image: url('/img/HOB.jpeg')
-    }
-</style>
-<header class="intro-header" >
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/real.jpeg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        
-                          <a class="tag" href="/tags/#项目" title="项目">项目</a>
-                        
-                    </div>
-                    <h1>Weibo</h1>
-                    <h2 class="subheading"></h2>
-                    <span class="meta">
-                        Posted by 亏普 on
-                        2017-08-06
-                    </span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Archives</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">Hey, this is Archives.</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <!-- 归档列表 -->
 
-    <!-- Post Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
+            
 
-                <h2 id="仿新浪微博客户端"><a href="#仿新浪微博客户端" class="headerlink" title="仿新浪微博客户端"></a>仿新浪微博客户端</h2><p><a href="https://github.com/MarshallMathersIII/Weibo" target="_blank" rel="external">github地址</a><br><a href="http://open.weibo.com/wiki/%E5%BE%AE%E5%8D%9AAPI" target="_blank" rel="external">新浪微博开放平台API</a><br><a href="https://github.com/8tory/weibo-android-sdk" target="_blank" rel="external">微博SDK</a></p>
-<h2 id="微博正则处理-、表情、话题-、url正则处理）"><a href="#微博正则处理-、表情、话题-、url正则处理）" class="headerlink" title="微博正则处理(@、表情、话题##、url正则处理）"></a>微博正则处理(@、表情、话题##、url正则处理）</h2><p>Java 正则表达式基础<br>微博正则demo</p>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="https://mp.weixin.qq.com/s?__biz=MzIxOTI1NTk5Nw==&amp;mid=2650047537&amp;idx=1&amp;sn=59b3d01944fcc6dc5c98c695f36f8bed&amp;scene=19#wechat_redirect" target="_blank" rel="external">正则表达式</a></p>
-<h2 id="图片浏览功能"><a href="#图片浏览功能" class="headerlink" title="图片浏览功能"></a>图片浏览功能</h2><p>功能点: 图片浏览（包括长图浏览、GIF），双击缩放操作，保存本地功能，图片加载百分比<br>知识点：ViewPager Universalimageloader  PhotoView Glide<br>缺陷：gif图片浏览及图片加载百分比未实现</p>
-<h3 id="参考-1"><a href="#参考-1" class="headerlink" title="参考"></a>参考</h3><p><a href="http://blog.csdn.net/guolin_blog/article/details/53759439" target="_blank" rel="external">Glide框架源码解析及使用</a><br><a href="http://blog.csdn.net/xiehuimx/article/details/52349317" target="_blank" rel="external">Glide使用说明</a><br><a href="https://juejin.im/entry/5811bb1f67f3560057d7ac01" target="_blank" rel="external">微博加载长图</a><br><a href="https://github.com/shaohui10086/BottomDialog/blob/master/README_ZH.md" target="_blank" rel="external">BottomDialog</a></p>
+             <!-- 归档列表 -->
 
 
-                <hr>
 
+            
+            <div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2017">
+                    <span class="tag-text">2017</span>
+                </span>
+                <ul>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    08-11
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2017/08/11/读书清单/" style="color: #0085a1">
+                        <span>
+                            读书清单
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    08-07
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2017/08/07/Git/" style="color: #0085a1">
+                        <span>
+                            Git
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    08-06
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2017/08/06/Weibo/" style="color: #0085a1">
+                        <span>
+                            Weibo
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    08-05
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2017/08/05/开发者工具/" style="color: #0085a1">
+                        <span>
+                            开发者工具
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
                 
 
-                <ul class="pager">
-                    
-                        <li class="previous">
-                            <a href="/2017/08/07/Git/" data-toggle="tooltip" data-placement="top" title="Git">&larr; Previous Post</a>
-                        </li>
-                    
-                    
-                        <li class="next">
-                            <a href="/2017/08/05/开发者工具/" data-toggle="tooltip" data-placement="top" title="开发者工具">Next Post &rarr;</a>
-                        </li>
-                    
                 </ul>
-
-                
-
-                
-
             </div>
-    <!-- Side Catalog Container -->
-        
-
-    <!-- Sidebar Container -->
-
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
+            
+            <div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2016">
+                    <span class="tag-text">2016</span>
+                </span>
+                <ul>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    08-22
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2016/08/22/Hexo-GitHub搭建个人博客/" style="color: #0085a1">
+                        <span>
+                            Hexo+GitHub搭建个人博客
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
+                
+                  <!-- <li class="listing-item">
+                  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+                  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+                  </li> -->
+                 <li >
+                    06-19
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                    <a href="/2016/06/19/androidStudio的使用/" style="color: #0085a1">
+                        <span>
+                            AndroidStudio的使用
+                        </span>
+                    </a>
+                    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+                </li>
                 
 
-                <!-- Friends Blog -->
-                
+                </ul>
             </div>
+            
+
 
         </div>
     </div>
-</article>
-
-
-
-
-
-
-
+</div>
 
 
     <!-- Footer -->
