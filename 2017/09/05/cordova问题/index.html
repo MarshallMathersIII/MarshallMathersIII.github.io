@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="列侬觉的自己是上帝，我只觉的自己是列侬">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          cordova问题 - 亏普
+        
+    </title>
+
+    <link rel="canonical" href="http://yoursite.com/2017/09/05/cordova问题/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">亏普</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archives/">Archives</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/HOB.jpeg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#cordova" title="cordova">cordova</a>
+                        
+                    </div>
+                    <h1>cordova问题</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted by 亏普 on
+                        2017-09-05
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>项目为Android Cordova，在没有任何改动情况下build报错，在github和starkoverflow发现事Cordova官方插件服务器挂了，无语森。</p>
+<figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">Error:A problem occurred configuring root project <span class="string">'android'</span>.</span><br><span class="line">&gt; Could <span class="keyword">not</span> <span class="built_in">resolve</span> all dependencies <span class="keyword">for</span> configuration <span class="string">':_prodDebugApkCopy'</span>.</span><br><span class="line">   &gt; Could <span class="keyword">not</span> <span class="built_in">resolve</span> org.xwalk:xwalk_core_library:<span class="number">17</span>+.</span><br><span class="line">     Required <span class="keyword">by</span>:</span><br><span class="line">         project :</span><br><span class="line">      &gt; Could <span class="keyword">not</span> <span class="built_in">resolve</span> org.xwalk:xwalk_core_library:<span class="number">17</span>+.</span><br><span class="line">         &gt; Failed <span class="built_in">to</span> list versions <span class="keyword">for</span> org.xwalk:xwalk_core_library.</span><br><span class="line">            &gt; Unable <span class="built_in">to</span> <span class="built_in">load</span> Maven meta-data <span class="built_in">from</span> <span class="keyword">https</span>://download<span class="number">.01</span>.org/crosswalk/releases/crosswalk/android/maven2/org/xwalk/xwalk_core_library/maven-metadata.xml.</span><br><span class="line">               &gt; Could <span class="keyword">not</span> GET <span class="string">'https://download.01.org/crosswalk/releases/crosswalk/android/maven2/org/xwalk/xwalk_core_library/maven-metadata.xml'</span>. Received status code <span class="number">503</span> <span class="built_in">from</span> server: Service Unavailable</span><br></pre></td></tr></table></figure>
+<p>在官方不靠谱无回应的情况下，终于在GitHub上找到了<a href="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview/issues/158" target="_blank" rel="external">解决方法</a></p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="keyword">This</span> can solve the issue <span class="keyword">for</span> latest crosswalk version.</span><br><span class="line">Open platforms\android\cordova-plugin-crosswalk-webview\eqp-xwalk.gradle</span><br><span class="line">change <span class="keyword">this</span>:</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line"><span class="keyword">compile</span> xwalkSpec</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">to <span class="keyword">this</span> one:</span><br><span class="line"></span><br><span class="line"><span class="keyword">dependencies</span> &#123;</span><br><span class="line"><span class="keyword">compile</span> <span class="string">'org.xwalk:xwalk_core_library:23.53.589.4'</span> <span class="comment">//xwalkSpec</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>烦恼会解决烦恼，bug会解决bug，在clean之后，又发生的下面的错误</p>
+<figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span><span class="number">-11</span>:<span class="number">41</span> <span class="string">Error:</span></span><br><span class="line">uses-<span class="string">sdk:</span>minSdkVersion <span class="number">14</span> cannot be smaller than version <span class="number">16</span> declared <span class="keyword">in</span> library [org.<span class="string">xwalk:</span><span class="string">xwalk_core_library:</span><span class="number">23.53</span><span class="number">.589</span><span class="number">.4</span>] <span class="regexp">/Users/</span>eminem<span class="regexp">/.android/</span>build-cache<span class="regexp">/86c2a1a3bd3e937850104f58d37ae77b32050429/</span>output/AndroidManifest.xml</span><br><span class="line"><span class="symbol">	Suggestion:</span> use <span class="string">tools:</span>overrideLibrary=<span class="string">"org.xwalk.core"</span> to force usage</span><br><span class="line">	</span><br><span class="line">See <span class="string">http:</span><span class="comment">//g.co/androidstudio/manifest-merger for more information about the manifest merger.</span></span><br><span class="line">:processSitDebugManifest FAILED</span><br><span class="line"><span class="string">FAILURE:</span> Build failed with an exception.</span><br></pre></td></tr></table></figure>
+<p>之后在知乎上找到<a href="https://www.zhihu.com/question/36645628" target="_blank" rel="external">症结所在</a>，但由于项目是Cordova，build.gradle比较特殊，如下：</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="comment">// GENERATED FILE! DO NOT EDIT!</span></span><br><span class="line"></span><br><span class="line">apply plugin: <span class="string">'android'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">buildscript</span> &#123;</span><br><span class="line">    <span class="keyword">repositories</span> &#123;</span><br><span class="line"></span><br><span class="line">        jcenter()</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Switch the Android Gradle plugin version requirement depending on the</span></span><br><span class="line">    <span class="comment">// installed version of Gradle. This dependency is documented at</span></span><br><span class="line">    <span class="comment">// http://tools.android.com/tech-docs/new-build-system/version-compatibility</span></span><br><span class="line">    <span class="comment">// and https://issues.apache.org/jira/browse/CB-8143</span></span><br><span class="line">    <span class="keyword">dependencies</span> &#123;</span><br><span class="line"><span class="comment">//        classpath 'com.android.tools.build:gradle:2.1.0'</span></span><br><span class="line">        <span class="keyword">classpath</span> <span class="string">'com.android.tools.build:gradle:2.3.0'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Allow plugins to declare Maven dependencies via build-extras.gradle.</span></span><br><span class="line"><span class="keyword">repositories</span> &#123;</span><br><span class="line">    <span class="keyword">flatDir</span> &#123;</span><br><span class="line">        dirs <span class="string">'libs'</span></span><br><span class="line">    &#125;</span><br><span class="line">    mavenCentral()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">task</span> wrapper(type: Wrapper) &#123;</span><br><span class="line">    gradleVersion = <span class="string">'2.8'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Configuration properties. Set these via environment variables, build-extras.gradle, or gradle.properties.</span></span><br><span class="line"><span class="comment">// Refer to: http://www.gradle.org/docs/current/userguide/tutorial_this_and_that.html</span></span><br><span class="line">ext &#123;</span><br><span class="line">    apply <span class="keyword">from</span>: <span class="string">'CordovaLib/cordova.gradle'</span></span><br><span class="line">    <span class="comment">// The value for android.compileSdkVersion.</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">project</span>.hasProperty(<span class="string">'cdvCompileSdkVersion'</span>)) &#123;</span><br><span class="line">        cdvCompileSdkVersion = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// The value for android.buildToolsVersion.</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">project</span>.hasProperty(<span class="string">'cdvBuildToolsVersion'</span>)) &#123;</span><br><span class="line">        cdvBuildToolsVersion = <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Sets the versionCode to the given value.</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">project</span>.hasProperty(<span class="string">'cdvVersionCode'</span>)) &#123;</span><br><span class="line">        cdvVersionCode = <span class="keyword">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Sets the minSdkVersion to the given value.</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">project</span>.hasProperty(<span class="string">'cdvMinSdkVersion'</span>)) &#123;</span><br><span class="line">        cdvMinSdkVersion = <span class="keyword">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Whether to build architecture-specific APKs.</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">project</span>.hasProperty(<span class="string">'cdvBuildMultipleApks'</span>)) &#123;</span><br><span class="line">        cdvBuildMultipleApks = <span class="keyword">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// .properties files to use for release signing.</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">project</span>.hasProperty(<span class="string">'cdvReleaseSigningPropertiesFile'</span>)) &#123;</span><br><span class="line">        cdvReleaseSigningPropertiesFile = <span class="keyword">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// .properties files to use for debug signing.</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">project</span>.hasProperty(<span class="string">'cdvDebugSigningPropertiesFile'</span>)) &#123;</span><br><span class="line">        cdvDebugSigningPropertiesFile = <span class="keyword">null</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// Set by build.js script.</span></span><br><span class="line">    <span class="keyword">if</span> (!<span class="keyword">project</span>.hasProperty(<span class="string">'cdvBuildArch'</span>)) &#123;</span><br><span class="line">        cdvBuildArch = <span class="keyword">null</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Plugin gradle extensions can append to this to have code run at the end.</span></span><br><span class="line">    cdvPluginPostBuildExtras = []</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// PLUGIN GRADLE EXTENSIONS START</span></span><br><span class="line">apply <span class="keyword">from</span>: <span class="string">"cordova-plugin-crosswalk-webview/portal-xwalk.gradle"</span></span><br><span class="line"><span class="comment">// PLUGIN GRADLE EXTENSIONS END</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> hasBuildExtras = <span class="keyword">file</span>(<span class="string">'build-extras.gradle'</span>).exists()</span><br><span class="line"><span class="keyword">if</span> (hasBuildExtras) &#123;</span><br><span class="line">    apply <span class="keyword">from</span>: <span class="string">'build-extras.gradle'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Set property defaults after extension .gradle files.</span></span><br><span class="line"><span class="keyword">if</span> (ext.cdvCompileSdkVersion == <span class="keyword">null</span>) &#123;</span><br><span class="line">    ext.cdvCompileSdkVersion = privateHelpers.getProjectTarget()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (ext.cdvBuildToolsVersion == <span class="keyword">null</span>) &#123;</span><br><span class="line">    ext.cdvBuildToolsVersion = privateHelpers.findLatestInstalledBuildTools()</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (ext.cdvDebugSigningPropertiesFile == <span class="keyword">null</span> &amp;&amp; <span class="keyword">file</span>(<span class="string">'debug-signing.properties'</span>).exists()) &#123;</span><br><span class="line">    ext.cdvDebugSigningPropertiesFile = <span class="string">'debug-signing.properties'</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">if</span> (ext.cdvReleaseSigningPropertiesFile == <span class="keyword">null</span> &amp;&amp; <span class="keyword">file</span>(<span class="string">'release-signing.properties'</span>).exists()) &#123;</span><br><span class="line">    ext.cdvReleaseSigningPropertiesFile = <span class="string">'release-signing.properties'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Cast to appropriate types.</span></span><br><span class="line">ext.cdvBuildMultipleApks = cdvBuildMultipleApks == <span class="keyword">null</span> ? <span class="keyword">false</span> : cdvBuildMultipleApks.toBoolean();</span><br><span class="line">ext.cdvMinSdkVersion = cdvMinSdkVersion == <span class="keyword">null</span> ? <span class="keyword">null</span> : Integer.parseInt(<span class="string">''</span> + cdvMinSdkVersion)</span><br><span class="line">ext.cdvVersionCode = cdvVersionCode == <span class="keyword">null</span> ? <span class="keyword">null</span> : Integer.parseInt(<span class="string">''</span> + cdvVersionCode)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> computeBuildTargetName(debugBuild) &#123;</span><br><span class="line">    <span class="keyword">def</span> ret = <span class="string">'assemble'</span></span><br><span class="line">    <span class="keyword">if</span> (cdvBuildMultipleApks &amp;&amp; cdvBuildArch) &#123;</span><br><span class="line">        <span class="keyword">def</span> arch = cdvBuildArch == <span class="string">'arm'</span> ? <span class="string">'armv7'</span> : cdvBuildArch</span><br><span class="line">        ret += <span class="string">''</span> + arch.toUpperCase().charAt(<span class="number">0</span>) + arch.substring(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret + (debugBuild ? <span class="string">'Debug'</span> : <span class="string">'Release'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Make cdvBuild a task that depends on the debug/arch-sepecific task.</span></span><br><span class="line"><span class="keyword">task</span> cdvBuildDebug</span><br><span class="line">cdvBuildDebug.dependsOn &#123;</span><br><span class="line">    <span class="keyword">return</span> computeBuildTargetName(<span class="keyword">true</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">task</span> cdvBuildRelease</span><br><span class="line">cdvBuildRelease.dependsOn &#123;</span><br><span class="line">    <span class="keyword">return</span> computeBuildTargetName(<span class="keyword">false</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">task</span> cdvPrintProps &lt;&lt; &#123;</span><br><span class="line">    <span class="keyword">println</span>(<span class="string">'cdvCompileSdkVersion='</span> + cdvCompileSdkVersion)</span><br><span class="line">    <span class="keyword">println</span>(<span class="string">'cdvBuildToolsVersion='</span> + cdvBuildToolsVersion)</span><br><span class="line">    <span class="keyword">println</span>(<span class="string">'cdvVersionCode='</span> + cdvVersionCode)</span><br><span class="line">    <span class="keyword">println</span>(<span class="string">'cdvMinSdkVersion='</span> + cdvMinSdkVersion)</span><br><span class="line">    <span class="keyword">println</span>(<span class="string">'cdvBuildMultipleApks='</span> + cdvBuildMultipleApks)</span><br><span class="line">    <span class="keyword">println</span>(<span class="string">'cdvReleaseSigningPropertiesFile='</span> + cdvReleaseSigningPropertiesFile)</span><br><span class="line">    <span class="keyword">println</span>(<span class="string">'cdvDebugSigningPropertiesFile='</span> + cdvDebugSigningPropertiesFile)</span><br><span class="line">    <span class="keyword">println</span>(<span class="string">'cdvBuildArch='</span> + cdvBuildArch)</span><br><span class="line">    <span class="keyword">println</span>(<span class="string">'computedVersionCode='</span> + android.defaultConfig.versionCode)</span><br><span class="line">    android.productFlavors.<span class="keyword">each</span> &#123; flavor -&gt;</span><br><span class="line">        <span class="keyword">println</span>(<span class="string">'computed'</span> + flavor.name.capitalize() + <span class="string">'VersionCode='</span> + flavor.versionCode)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">android &#123;</span><br><span class="line"><span class="comment">//    compileSdkVersion 25</span></span><br><span class="line"><span class="comment">//    buildToolsVersion '25.0.2'</span></span><br><span class="line"></span><br><span class="line">    packagingOptions &#123;</span><br><span class="line">        <span class="keyword">exclude</span> <span class="string">'META-INF/services/javax.annotation.processing.Processor'</span></span><br><span class="line">    &#125;</span><br><span class="line">    lintOptions &#123;</span><br><span class="line">        abortOnError <span class="keyword">false</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">sourceSets</span> &#123;</span><br><span class="line">        main &#123;</span><br><span class="line">            manifest.srcFile <span class="string">'AndroidManifest.xml'</span></span><br><span class="line">            java.srcDirs = [<span class="string">'src'</span>]</span><br><span class="line">            resources.srcDirs = [<span class="string">'src'</span>]</span><br><span class="line">            aidl.srcDirs = [<span class="string">'src'</span>]</span><br><span class="line">            renderscript.srcDirs = [<span class="string">'src'</span>]</span><br><span class="line">            res.srcDirs = [<span class="string">'res'</span>]</span><br><span class="line">            assets.srcDirs = [<span class="string">'assets'</span>]</span><br><span class="line">            jniLibs.srcDirs = [<span class="string">'libs'</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    defaultConfig &#123;</span><br><span class="line">        versionCode cdvVersionCode ?: Integer.parseInt(<span class="string">""</span> + privateHelpers.extractIntFromManifest(<span class="string">"versionCode"</span>) + <span class="string">"0"</span>)</span><br><span class="line">        applicationId privateHelpers.extractStringFromManifest(<span class="string">"package"</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (cdvMinSdkVersion != <span class="keyword">null</span>) &#123;</span><br><span class="line">            minSdkVersion cdvMinSdkVersion</span><br><span class="line">        &#125;</span><br><span class="line">        multiDexEnabled <span class="keyword">true</span>;</span><br><span class="line">        ndk &#123;</span><br><span class="line">            <span class="comment">// 设置支持的 SO 库构架，注意这里要根据你的实际情况来设置</span></span><br><span class="line">            abiFilters <span class="string">'armeabi'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    lintOptions &#123;</span><br><span class="line">        abortOnError <span class="keyword">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    compileSdkVersion cdvCompileSdkVersion</span><br><span class="line">    buildToolsVersion cdvBuildToolsVersion</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">Boolean</span>.valueOf(cdvBuildMultipleApks)) &#123;</span><br><span class="line">        productFlavors &#123;</span><br><span class="line">            armv7 &#123;</span><br><span class="line">                versionCode defaultConfig.versionCode + <span class="number">2</span></span><br><span class="line">                ndk &#123;</span><br><span class="line">                    abiFilters <span class="string">"armeabi-v7a"</span>, <span class="string">""</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            x86 &#123;</span><br><span class="line">                versionCode defaultConfig.versionCode + <span class="number">4</span></span><br><span class="line">                ndk &#123;</span><br><span class="line">                    abiFilters <span class="string">"x86"</span>, <span class="string">""</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            all &#123;</span><br><span class="line">                ndk &#123;</span><br><span class="line">                    abiFilters <span class="string">"all"</span>, <span class="string">""</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!cdvVersionCode) &#123;</span><br><span class="line">        <span class="keyword">def</span> minSdkVersion = cdvMinSdkVersion ?: privateHelpers.extractIntFromManifest(<span class="string">"minSdkVersion"</span>)</span><br><span class="line">        <span class="comment">// Vary versionCode by the two most common API levels:</span></span><br><span class="line">        <span class="comment">// 14 is ICS, which is the lowest API level for many apps.</span></span><br><span class="line">        <span class="comment">// 20 is Lollipop, which is the lowest API level for the updatable system webview.</span></span><br><span class="line">        <span class="keyword">if</span> (minSdkVersion &gt;= <span class="number">20</span>) &#123;</span><br><span class="line">            defaultConfig.versionCode += <span class="number">9</span></span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (minSdkVersion &gt;= <span class="number">14</span>) &#123;</span><br><span class="line">            defaultConfig.versionCode += <span class="number">8</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    compileOptions &#123;</span><br><span class="line">        <span class="keyword">sourceCompatibility</span> JavaVersion.VERSION_1_7</span><br><span class="line">        <span class="keyword">targetCompatibility</span> JavaVersion.VERSION_1_7</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cdvReleaseSigningPropertiesFile) &#123;</span><br><span class="line">        signingConfigs &#123;</span><br><span class="line">            release &#123;</span><br><span class="line">           </span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        buildTypes &#123;</span><br><span class="line">            release &#123;</span><br><span class="line">                minifyEnabled  <span class="keyword">true</span> <span class="comment">//是否混淆</span></span><br><span class="line">                zipAlignEnabled <span class="keyword">true</span> <span class="comment">// zip对齐优化</span></span><br><span class="line">                shrinkResources <span class="keyword">true</span> <span class="comment">// 移除不必要的资源</span></span><br><span class="line"><span class="comment">//              buildConfigField "boolean", "LOG_DEBUG", "false"// 不显示Log</span></span><br><span class="line">                proguardFiles getDefaultProguardFile(<span class="string">'proguard-android-optimize.txt'</span>), <span class="string">'proguard.cfg'</span></span><br><span class="line"><span class="comment">//              proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'</span></span><br><span class="line">                signingConfig signingConfigs.release</span><br><span class="line"></span><br><span class="line">                <span class="comment">//自动重命名</span></span><br><span class="line">                android.applicationVariants.all &#123; variant -&gt;</span><br><span class="line">                    variant.outputs.<span class="keyword">each</span> &#123; output -&gt;</span><br><span class="line">                        output.outputFile = <span class="keyword">new</span> <span class="keyword">File</span>(output.outputFile.parent,</span><br><span class="line">                                <span class="string">"HRBank_"</span> + productFlavors[<span class="number">0</span>].name + <span class="string">"_"</span> + buildType.name +</span><br><span class="line">                                        <span class="string">".apk"</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        productFlavors &#123;</span><br><span class="line"></span><br><span class="line">            tencent &#123;&#125;</span><br><span class="line">            uat &#123;&#125;</span><br><span class="line">            sit &#123;&#125;</span><br><span class="line">            prod &#123;&#125;</span><br><span class="line">            productFlavors.all &#123; flavors -&gt;</span><br><span class="line">                flavors.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        addSigningProps(cdvReleaseSigningPropertiesFile, signingConfigs.release)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (cdvDebugSigningPropertiesFile) &#123;</span><br><span class="line">        addSigningProps(cdvDebugSigningPropertiesFile, signingConfigs.debug)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    dexOptions &#123;</span><br><span class="line">        javaMaxHeapSize <span class="string">"8g"</span></span><br><span class="line">        preDexLibraries = <span class="keyword">false</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>不是太明白，多方查找问题解决，需要认真研究下Cordova build的配置信息，设置cdvMinSdkVersion=16</p>
+<figure class="highlight gradle"><table><tr><td class="code"><pre><span class="line"><span class="comment">// Sets the minSdkVersion to the given value.</span></span><br><span class="line">  <span class="keyword">if</span> (!<span class="keyword">project</span>.hasProperty(<span class="string">'cdvMinSdkVersion'</span>)) &#123;</span><br><span class="line">      cdvMinSdkVersion = <span class="keyword">null</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://www.zhihu.com/question/36645628" target="_blank" rel="external">Manifest merger failed with multiple errors, see ？</a><br><a href="https://github.com/crosswalk-project/cordova-plugin-crosswalk-webview/issues/158" target="_blank" rel="external">cordova build android get error</a><br><a href="http://www.voidcn.com/article/p-fimfhajj-xo.html" target="_blank" rel="external">Cordova开发平台配置–Android</a><br>[<a href="https://segmentfault.com/a/1190000004276191" target="_blank" rel="external">使用Android Studio构建Cordova项目</a>]</p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2017/09/01/Android绘图机制与处理技巧/" data-toggle="tooltip" data-placement="top" title="Android绘图机制与处理技巧">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+                <!-- Friends Blog -->
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/ghy1060627080">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/亏普">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/亏普">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/MarshallMathersIII">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 亏普 2017 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=kaijun&repo=hexo-theme-huxblog&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("http://yoursite.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+
+<!-- Baidu Tongji -->
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="http://yoursite.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
