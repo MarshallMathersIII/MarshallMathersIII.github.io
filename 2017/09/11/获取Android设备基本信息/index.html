@@ -13,11 +13,11 @@
 
     <title>
         
-          Cordova自定义插件 - 亏普
+          获取Android设备基本信息 - 亏普
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2017/09/07/Cordova自定义插件/">
+    <link rel="canonical" href="http://yoursite.com/2017/09/11/获取Android设备基本信息/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -165,14 +165,12 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#cordova" title="cordova">cordova</a>
-                        
                     </div>
-                    <h1>Cordova自定义插件</h1>
+                    <h1>获取Android设备基本信息</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by 亏普 on
-                        2017-09-07
+                        2017-09-11
                     </span>
                 </div>
             </div>
@@ -199,13 +197,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2017/09/11/获取Android设备基本信息/" data-toggle="tooltip" data-placement="top" title="获取Android设备基本信息">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2017/09/06/Cordova教程/" data-toggle="tooltip" data-placement="top" title="Cordova教程">Next Post &rarr;</a>
+                            <a href="/2017/09/07/Cordova自定义插件/" data-toggle="tooltip" data-placement="top" title="Cordova自定义插件">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -216,20 +210,6 @@
 
             </div>
     <!-- Side Catalog Container -->
-        
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
-                </div>
-            </div>
         
 
     <!-- Sidebar Container -->
@@ -406,50 +386,6 @@
 
 
 <!-- Side Catalog -->
-
-<script type="text/javascript">
-    function generateCatalog (selector) {
-        var P = $('div.post-container'),a,n,t,l,i,c;
-        a = P.find('h1,h2,h3,h4,h5,h6');
-        a.each(function () {
-            n = $(this).prop('tagName').toLowerCase();
-            i = "#"+$(this).prop('id');
-            t = $(this).text();
-            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
-            l = $('<li class="'+n+'_nav"></li>').append(c);
-            $(selector).append(l);
-        });
-        return true;    
-    }
-
-    generateCatalog(".catalog-body");
-
-    // toggle side catalog
-    $(".catalog-toggle").click((function(e){
-        e.preventDefault();
-        $('.side-catalog').toggleClass("fold")
-    }))
-
-    /*
-     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
-     * Fork by Hux to support padding
-     */
-    async("/js/jquery.nav.js", function () {
-        $('.catalog-body').onePageNav({
-            currentClass: "active",
-            changeHash: !1,
-            easing: "swing",
-            filter: "",
-            scrollSpeed: 700,
-            scrollOffset: 0,
-            scrollThreshold: .2,
-            begin: null,
-            end: null,
-            scrollChange: null,
-            padding: 80
-        });
-    });
-</script>
 
 
 
