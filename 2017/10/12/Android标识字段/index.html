@@ -13,11 +13,11 @@
 
     <title>
         
-          Android绘图机制与处理技巧 - 亏普
+          Android标识字段 - 亏普
         
     </title>
 
-    <link rel="canonical" href="http://yoursite.com/2017/09/01/Android绘图机制与处理技巧/">
+    <link rel="canonical" href="http://yoursite.com/2017/10/12/Android标识字段/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -165,14 +165,14 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#Android群英传" title="Android群英传">Android群英传</a>
+                          <a class="tag" href="/tags/#android" title="android">android</a>
                         
                     </div>
-                    <h1>Android绘图机制与处理技巧</h1>
+                    <h1>Android标识字段</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by 亏普 on
-                        2017-09-01
+                        2017-10-12
                     </span>
                 </div>
             </div>
@@ -191,8 +191,22 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h1 id="屏幕尺寸信息"><a href="#屏幕尺寸信息" class="headerlink" title="屏幕尺寸信息"></a>屏幕尺寸信息</h1><h1 id="2D绘图基础"><a href="#2D绘图基础" class="headerlink" title="2D绘图基础"></a>2D绘图基础</h1><h1 id="Android-XML绘图"><a href="#Android-XML绘图" class="headerlink" title="Android XML绘图"></a>Android XML绘图</h1><h1 id="绘图技巧"><a href="#绘图技巧" class="headerlink" title="绘图技巧"></a>绘图技巧</h1><h2 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h2><figure class="highlight groovy"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyClock</span> <span class="keyword">extends</span> <span class="title">View</span> &#123;</span></span><br><span class="line">    <span class="keyword">public</span> MyClock(Context context) &#123;</span><br><span class="line">        <span class="keyword">super</span>(context);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> MyClock(Context context, <span class="meta">@Nullable</span> AttributeSet attrs) &#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> MyClock(Context context, <span class="meta">@Nullable</span> AttributeSet attrs, <span class="keyword">int</span> defStyleAttr) &#123;</span><br><span class="line">        <span class="keyword">super</span>(context, attrs, defStyleAttr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> onDraw(Canvas canvas) &#123;</span><br><span class="line">        <span class="comment">//获取宽高</span></span><br><span class="line">        <span class="keyword">int</span> mWidth = getMeasuredWidth();</span><br><span class="line">        <span class="keyword">int</span> mHeight = getMeasuredHeight();</span><br><span class="line">        <span class="comment">//画外圆</span></span><br><span class="line">        Paint paintCircle = <span class="keyword">new</span> Paint();</span><br><span class="line">        paintCircle.setStyle(Paint.Style.STROKE);</span><br><span class="line">        paintCircle.setAntiAlias(<span class="literal">true</span>);</span><br><span class="line">        paintCircle.setStrokeWidth(<span class="number">5</span>);</span><br><span class="line">        canvas.drawCircle(mWidth <span class="regexp">/ 2, mHeight /</span> <span class="number">2</span>, mWidth / <span class="number">2</span>, paintCircle);</span><br><span class="line">        <span class="comment">// 画刻度</span></span><br><span class="line">        Paint painDegree = <span class="keyword">new</span> Paint();</span><br><span class="line">        paintCircle.setStrokeWidth(<span class="number">3</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">24</span>; i++) &#123;</span><br><span class="line">            <span class="comment">// 区分整点与非整点</span></span><br><span class="line">            <span class="keyword">if</span> (i == <span class="number">0</span> || i == <span class="number">6</span> || i == <span class="number">12</span> || i == <span class="number">18</span>) &#123;</span><br><span class="line">                painDegree.setStrokeWidth(<span class="number">5</span>);</span><br><span class="line">                painDegree.setTextSize(<span class="number">30</span>);</span><br><span class="line">                canvas.drawLine(mWidth <span class="regexp">/ 2, mHeight /</span> <span class="number">2</span> - mWidth / <span class="number">2</span>,</span><br><span class="line">                        mWidth <span class="regexp">/ 2, mHeight /</span> <span class="number">2</span> - mWidth / <span class="number">2</span> + <span class="number">60</span>,</span><br><span class="line">                        painDegree);</span><br><span class="line">                String degree = String.valueOf(i);</span><br><span class="line">                canvas.drawText(degree,</span><br><span class="line">                        mWidth <span class="regexp">/ 2 - painDegree.measureText(degree) /</span> <span class="number">2</span>,</span><br><span class="line">                        mHeight <span class="regexp">/ 2 - mWidth /</span> <span class="number">2</span> + <span class="number">90</span>,</span><br><span class="line">                        painDegree);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                painDegree.setStrokeWidth(<span class="number">3</span>);</span><br><span class="line">                painDegree.setTextSize(<span class="number">15</span>);</span><br><span class="line">                canvas.drawLine(mWidth <span class="regexp">/ 2, mHeight /</span> <span class="number">2</span> - mWidth / <span class="number">2</span>,</span><br><span class="line">                        mWidth <span class="regexp">/ 2, mHeight /</span> <span class="number">2</span> - mWidth / <span class="number">2</span> + <span class="number">30</span>,</span><br><span class="line">                        painDegree);</span><br><span class="line">                String degree = String.valueOf(i);</span><br><span class="line">                canvas.drawText(degree,</span><br><span class="line">                        mWidth <span class="regexp">/ 2 - painDegree.measureText(degree) /</span> <span class="number">2</span>,</span><br><span class="line">                        mHeight <span class="regexp">/ 2 - mWidth /</span> <span class="number">2</span> + <span class="number">60</span>,</span><br><span class="line">                        painDegree);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 通过旋转画布简化坐标运算</span></span><br><span class="line">            canvas.rotate(<span class="number">15</span>, mWidth <span class="regexp">/ 2, mHeight /</span> <span class="number">2</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// 画指针</span></span><br><span class="line">        Paint paintHour = <span class="keyword">new</span> Paint();</span><br><span class="line">        paintHour.setStrokeWidth(<span class="number">20</span>);</span><br><span class="line">        Paint paintMinute = <span class="keyword">new</span> Paint();</span><br><span class="line">        paintMinute.setStrokeWidth(<span class="number">10</span>);</span><br><span class="line">        canvas.save();</span><br><span class="line">        canvas.translate(mWidth <span class="regexp">/ 2, mHeight /</span> <span class="number">2</span>);</span><br><span class="line">        canvas.drawLine(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">100</span>, paintHour);</span><br><span class="line">        canvas.drawLine(<span class="number">0</span>, <span class="number">0</span>, <span class="number">100</span>, <span class="number">200</span>, paintMinute);</span><br><span class="line">        canvas.restore();</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="Layer图层"><a href="#Layer图层" class="headerlink" title="Layer图层"></a>Layer图层</h2>
+                <h1 id="Android体系ID"><a href="#Android体系ID" class="headerlink" title="Android体系ID"></a>Android体系ID</h1><p><strong>UUID </strong>: (Universally Unique Identifier)全局唯一标识符,是指在一台机器上生成的数字，它保证对在同一时空中的所有机器都是唯一的。由以下几部分的组合：当前日期和时间(UUID的第一个部分与时间有关，如果你在生成一个UUID之后，过几秒又生成一个UUID，则第一个部分不同，其余相同)，时钟序列，全局唯一的IEEE机器识别（如果有网卡，从网卡获得，没有网卡以其他方式获得）。</p>
+<p><strong>IMEI</strong> : (International Mobile Equipment Identity) 是国际移动设备身份码的缩写，国际移动装备辨识码，是由15位数字组成的”电子串号”，它与每台手机一一对应，而且该码是全世界唯一的。</p>
+<p><strong>MEID</strong> :（ Mobile Equipment IDentifier ）是全球唯一的56bit CDMA制式移动终端标识号。标识号会被烧入终端里，并且不能被修改。可用来对CDMA制式移动式设备进行身份识别和跟踪。</p>
+<p><strong>DeviceId</strong>：用 android 的官方文档来说，device id 不是用于标识你的设备的。他是标识一个设备的一次刷机行为的。换句话说，每次三清，刷机，这个ID会改变，（理论上是如此，当然不排除某些设备没有按照这个标准现）</p>
+<p>非手机设备：最开始搭载Android系统都手机设备，而现在也出现了非手机设备：如平板电脑、电视、音乐播放器等。这些设备没有通话的硬件功能，系统中也就没有TELEPHONY_SERVICE，自然也就无法通过上面的方法获得DEVICE_ID。</p>
+<p>权限问题：获取DEVICE_ID需要READ_PHONE_STATE权限，在Android 6.0上使用运行时动态授予权限的机制，一旦用户不给予授权，将获取不到DEVICE_ID。 </p>
+<p>厂商定制系统中的Bug：少数手机设备上，由于该实现有漏洞，会返回垃圾</p>
+<p><strong>MAC ADDRESS</strong>：MAC ADDRESS有两种：Wifi和BT，在设备出厂时分别独立设置。MAC地址共48位（6个字节），十六进制表示。前24位由IEEE决定如何分配，后24位由实际生产该网络设备的厂商自行指定。</p>
+<p>可以使用手机WiFi或蓝牙的MAC地址作为设备标识，但是并不推荐这么做，原因有以下两点：</p>
+<p>硬件限制：并不是所有的设备都有WiFi和蓝牙硬件，硬件不存在自然也就得不到这一信息。</p>
+<p>获取的限制：如果WiFi没有打开过，是无法获取其Mac地址的；而蓝牙是只有在打开的时候才能获取到其Mac地址。</p>
+<p><strong>ANDROID_ID</strong>：ANDROID_ID是设备第一次启动时产生和存储的64bit的一个数，当设备被wipe后该数重置。</p>
+<p>ANDROID_ID似乎是获取Device ID的一个好选择，但它也有缺陷：在主流厂商生产的设备上，有一个很经常的bug，就是每个设备都会产生相同的ANDROID_ID：9774d56d682e549c 。同时刷机，或者重置ANDROID_ID的值都会变化。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a href="https://developer.android.com/training/articles/user-data-ids.html?hl=zh-cn" target="_blank" rel="external">唯一标识符最佳做法</a></p>
+<p><a href="http://www.jianshu.com/p/178786f833b6" target="_blank" rel="external">如何唯一的标识一台Android设备？</a></p>
+
 
                 <hr>
 
@@ -200,13 +214,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2017/09/05/cordova问题/" data-toggle="tooltip" data-placement="top" title="cordova问题">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2017/08/29/Android控件架构与自定义控件详解/" data-toggle="tooltip" data-placement="top" title="Android控件架构与自定义控件详解">Next Post &rarr;</a>
+                            <a href="/2017/09/20/html-css基础/" data-toggle="tooltip" data-placement="top" title="html/css基础">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -217,20 +227,6 @@
 
             </div>
     <!-- Side Catalog Container -->
-        
-            <div class="
-                col-lg-2 col-lg-offset-0
-                visible-lg-block
-                sidebar-container
-                catalog-container">
-                <div class="side-catalog">
-                    <hr class="hidden-sm hidden-xs">
-                    <h5>
-                        <a class="catalog-toggle" href="#">CATALOG</a>
-                    </h5>
-                    <ul class="catalog-body"></ul>
-                </div>
-            </div>
         
 
     <!-- Sidebar Container -->
@@ -407,50 +403,6 @@
 
 
 <!-- Side Catalog -->
-
-<script type="text/javascript">
-    function generateCatalog (selector) {
-        var P = $('div.post-container'),a,n,t,l,i,c;
-        a = P.find('h1,h2,h3,h4,h5,h6');
-        a.each(function () {
-            n = $(this).prop('tagName').toLowerCase();
-            i = "#"+$(this).prop('id');
-            t = $(this).text();
-            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
-            l = $('<li class="'+n+'_nav"></li>').append(c);
-            $(selector).append(l);
-        });
-        return true;    
-    }
-
-    generateCatalog(".catalog-body");
-
-    // toggle side catalog
-    $(".catalog-toggle").click((function(e){
-        e.preventDefault();
-        $('.side-catalog').toggleClass("fold")
-    }))
-
-    /*
-     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
-     * Fork by Hux to support padding
-     */
-    async("/js/jquery.nav.js", function () {
-        $('.catalog-body').onePageNav({
-            currentClass: "active",
-            changeHash: !1,
-            easing: "swing",
-            filter: "",
-            scrollSpeed: 700,
-            scrollOffset: 0,
-            scrollThreshold: .2,
-            begin: null,
-            end: null,
-            scrollChange: null,
-            padding: 80
-        });
-    });
-</script>
 
 
 
