@@ -97,14 +97,14 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/tags/">Tags</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/tags/">Tags</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -191,7 +191,30 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                
+                <h2 id="安装配置"><a href="#安装配置" class="headerlink" title="安装配置"></a>安装配置</h2><p>git安装</p>
+<p>配置别名</p>
+<h2 id="创建Git仓库"><a href="#创建Git仓库" class="headerlink" title="创建Git仓库"></a>创建Git仓库</h2><p>git init</p>
+<p>git clone</p>
+<h2 id="提交修改"><a href="#提交修改" class="headerlink" title="提交修改"></a>提交修改</h2><h3 id="git-add-amp-commit"><a href="#git-add-amp-commit" class="headerlink" title="git add&amp;commit"></a>git add&amp;commit</h3><p>git add</p>
+<p>git commit</p>
+<p>git log</p>
+<p>git shortlog</p>
+<h3 id="追加修改"><a href="#追加修改" class="headerlink" title="追加修改"></a>追加修改</h3><p>git commit –amend</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">当开发者提交了一个<span class="keyword">commit</span>后，发现该<span class="keyword">commit</span>有错，可以随时对这个<span class="keyword">commit</span>进行修改，使用git <span class="keyword">commit</span> –amend指令即可。通过这种方式可以修改<span class="keyword">commit</span>，而不是通过新的<span class="keyword">commit</span>来修正前一个错误的<span class="keyword">commit</span>。</span><br></pre></td></tr></table></figure>
+<h3 id="查看代码仓库状态"><a href="#查看代码仓库状态" class="headerlink" title="查看代码仓库状态"></a>查看代码仓库状态</h3><p>git status：查看仓库状态</p>
+<p>git diff ：查看文件发生具体变化</p>
+<p>git diff HEAD</p>
+<figure class="highlight maxima"><table><tr><td class="code"><pre><span class="line">比较提交节点差异，同理，通过指定不同的HEAD，例如HEAD^，HEAD^^，上次commit节点、上上次commit节点。</span><br><span class="line"></span><br><span class="line">除了上面Git自带工具的<span class="built_in">diff</span>操作，实际上Git还支持使用第三方的<span class="built_in">diff</span>工具进行<span class="built_in">diff</span>操作，如Meld、beyond <span class="built_in">compare</span>等</span><br></pre></td></tr></table></figure>
+<h3 id="追溯历史版本"><a href="#追溯历史版本" class="headerlink" title="追溯历史版本"></a>追溯历史版本</h3><p>git log</p>
+<p>gitk</p>
+<p><a href="https://codeday.me/bug/20170602/19314.html" target="_blank" rel="external">安装gitk</a></p>
+<h2 id="工作区与暂存区"><a href="#工作区与暂存区" class="headerlink" title="工作区与暂存区"></a>工作区与暂存区</h2><h2 id="Git回退"><a href="#Git回退" class="headerlink" title="Git回退"></a>Git回退</h2><h3 id="chechout-amp-reset"><a href="#chechout-amp-reset" class="headerlink" title="chechout&amp;reset"></a>chechout&amp;reset</h3><p>git checkout：用来还原一个代码仓库中的文件</p>
+<figure class="highlight avrasm"><table><tr><td class="code"><pre><span class="line">修改文件之后，执行git <span class="keyword">add</span>指令之前，如果执行checkout指令则会抛弃当前本地的所有修改，恢复到上次最后的提交版本。</span><br><span class="line">如果修改文件并执行git <span class="keyword">add</span>指令后继续修改文件，此时再执行checkout指令，查看代码仓库状态，可以发现在执行<span class="keyword">add</span>指令将代码提交奥暂存区后，再修改该文件，此时如果继续执行checkout指令，则会将该文件恢复到执行<span class="keyword">add</span>操作后的初始状态，即恢复<span class="keyword">add</span>后的所有修改</span><br></pre></td></tr></table></figure>
+<h3 id="回退版本"><a href="#回退版本" class="headerlink" title="回退版本"></a>回退版本</h3><p>git reset</p>
+<h2 id="操作历史"><a href="#操作历史" class="headerlink" title="操作历史"></a>操作历史</h2><p>git reflog</p>
+<h2 id="Git文件操作"><a href="#Git文件操作" class="headerlink" title="Git文件操作"></a>Git文件操作</h2><p>git rm</p>
+<p>文件暂存</p>
+<h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2>
 
                 <hr>
 
