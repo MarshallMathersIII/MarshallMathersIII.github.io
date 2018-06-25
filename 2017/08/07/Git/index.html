@@ -90,13 +90,6 @@
 
                         
                         <li>
-                            <a href="/about/">About</a>
-                        </li>
-                        
-                    
-
-                        
-                        <li>
                             <a href="/archives/">Archives</a>
                         </li>
                         
@@ -105,6 +98,13 @@
                         
                         <li>
                             <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
@@ -222,7 +222,32 @@
 <h2 id="Git文件操作"><a href="#Git文件操作" class="headerlink" title="Git文件操作"></a>Git文件操作</h2><p>git rm</p>
 <p>文件暂存(待补充)</p>
 <h2 id="远程仓库"><a href="#远程仓库" class="headerlink" title="远程仓库"></a>远程仓库</h2><h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><p><strong>创建分支</strong></p>
-
+<p>git checkout -b dev：创建分支并切换分支</p>
+<p>git branch dev</p>
+<p>git checkout dev</p>
+<p><strong>查看分支</strong></p>
+<p>git branch：查看当前本地所有分支</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">在当前分支上会多一个*，用来表示当前所处的分支，通过指定-r参数可以列出所有远程分支，或者使用<span class="_">-a</span>参数列举所有本地和远程分支</span><br></pre></td></tr></table></figure>
+<p><strong>合并分支</strong></p>
+<p>git merge dev</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">开发者切换到dev分支后，对内容进行修改，接下来执行add和<span class="keyword">commit</span>操作，此时开发者再切换到<span class="keyword">master</span>分支，查看当前修改，你会发现dev分支上之前做的修改在<span class="keyword">master</span>分支上都没有生效，因为这两个是不同的分支，它们之间是完全独立不受影响的，所以我们切换到<span class="keyword">master</span>分支，然后<span class="keyword">Merge</span>分支dev到<span class="keyword">master</span>主分支中</span><br></pre></td></tr></table></figure>
+<p><strong>Merge与Rebase</strong></p>
+<figure class="highlight cos"><table><tr><td class="code"><pre><span class="line">在合并分支时，还有一种Rebase操作，它与<span class="keyword">Merge</span>操作所实现的功能基本是一样的，唯一的区别是，使用Rebase操作后Git时间线会被进行合并，而Nerge操作不会</span><br></pre></td></tr></table></figure>
+<p><strong>删除分支</strong></p>
+<p>git branch -d dev</p>
+<p><strong>查看远程分支</strong></p>
+<p>git remote</p>
+<p>git remote -v：查看详细信息</p>
+<p><strong>推送分支</strong></p>
+<p>git push orgin dev</p>
+<p><strong>分支的管理思想</strong></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">Git虽然是一个无中央集权的版本控制系统，但在一般开发过程中通常还是会指定一台服务器作为Git版本中央库，同时使用分支对中央库进行版本控制</span><br></pre></td></tr></table></figure>
+<p><strong>分支的设置</strong></p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><span class="line">在Git中央服务器上（origin），都会有一个默认的主分支（<span class="literal">master</span>），而一般的开发不会直接在主分支上进行，主分支永远用于打<span class="keyword">Tag</span>和发布release版本，保证发出去的版本一定是完善的、已验证过的，而且在团队中，也只有Leader以上级别的开发者才有权限将其他分支的代码Merge到主分支，因此开发时，最少会建立一个develop分支，所有的最新开发进展都同步到develop分支</span><br></pre></td></tr></table></figure>
+<p><strong>功能分支</strong></p>
+<figure class="highlight"><table><tr><td class="code"><pre><span class="line">在开发过程中，项目经常有一些需要紧急完成的功能或者需要紧急修复的bug，针对这些打断正常开发流程的事情，同样可以利用分支来进行处理，这些分支称之为功能分支或辅助分支，这些分支的管理与develop分支的处理基本类似，但要注意的是，一旦完成修改应该立刻删除这些分支，保证代码库的干净</span><br></pre></td></tr></table></figure>
+<h2 id="Git图解"><a href="#Git图解" class="headerlink" title="Git图解"></a>Git图解</h2><p><img src="https://img-blog.csdn.net/20161107000547487" alt=""></p>
+<h2 id="Tag"><a href="#Tag" class="headerlink" title="Tag"></a>Tag</h2>
 
                 <hr>
 
